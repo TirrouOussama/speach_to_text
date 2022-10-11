@@ -6,6 +6,6 @@ https://github.com/openai/whisper/discussions/63#discussioncomment-3798552
 
 
 if u gonna change the model into large or medium or others feel free to modify this line
-model = whisper.load_model("small")
+'model = whisper.load_model("small")'
 
 
