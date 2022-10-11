@@ -1,0 +1,88 @@
+<welcomescreen>
+	canvas.before:
+		Color:
+			rgba: 1, 1, 1, 1
+
+		Rectangle:
+			size: root.size
+
+
+		Color: 
+			rgba: 0.8, 0.8, 0.8, 1
+
+		Rectangle:
+			size: root.width*0.98, root.height*0.4
+			pos: root.width*0.01, root.height*0.55
+
+
+	Label:
+		text: 'speach to text'
+		size: root.width*0.2, root.height*0.05
+		pos: root.width*0.4, root.height*0.95
+		color: 1, 1, 1, 1
+
+	Button:
+		id: rec_id
+		background_color: 0, 0, 0, 0
+		size: root.width*0.1, root.height*0.1
+		pos:root.width*0.45, root.height*0.2
+		on_press: root.record_it()
+		Image:
+			source: 'mic.png'   #64*64 pxls
+			pos: self.parent.pos
+			size: self.parent.size
+			allow_stretch: True
+
+
+	Button:
+		id: stop_id
+		background_color: 0, 0, 0, 0
+		size: root.width*0.1, root.height*0.1
+		pos:root.width*2, root.height*0.2
+		on_press: root.stop_it()
+		Image:
+			source: 'stop.png'   #64*64 pxls
+			pos: self.parent.pos
+			size: self.parent.size
+			allow_stretch: True
+
+		ProgressBar:
+			id: prog
+			max: 1000
+			value: 0
+			pos: root.width*0.05, root.height*0.53
+			size: root.width*0.9, root.height*0.01
+
+
+	ScrollView:
+		size: root.width*0.98, root.height*0.4
+		pos: root.width*0.01, root.height*0.55
+	
+		Label:
+			id: result_id
+			color: 0, 0, 0, 1
+			text: ''
+			size_hint_x: 1.0
+			size_hint_y: None
+			text_size: self.width, None
+			height: self.texture_size[1]
+			font_name: '1.ttf'
+
+	Label:
+		id: brief
+		size: root.width*0.2, root.height*0.05
+		pos: root.width*0.4, root.height*0.35
+		color: 1,0,0,1
+		font_name: '1.ttf'
+
+	Button:
+		id: cp_id
+		background_color: 0, 0, 0, 0
+		size: root.width*0.1, root.height*0.1
+		pos:root.width*2, root.height*0.2
+		on_press: root.copy_it()
+		Image:
+			source: 'cp.png'   #64*64 pxls
+			pos: self.parent.pos
+			size: self.parent.size
+			allow_stretch: True
